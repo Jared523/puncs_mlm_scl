@@ -1,0 +1,19 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: 当前文件",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {"CUDA_VISIBLE_DEVICES":"2"},
+            "args": ["--model_name_or_path=chinese-roberta-wwm-ext","--train_file=data/train.txt","--validation_file=data/dev.txt","--train_ref_file=data/ref_train.txt","--validation_ref_file=data/ref_dev.txt",
+            "--num_train_epochs=5","--per_device_train_batch_size=1","--per_device_eval_batch_size=1","--cache_dir=cache_dir","--do_train","--do_eval","--output_dir=output_mlm","--overwrite_output_dir"]
+        }
+    ]
+}
